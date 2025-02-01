@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Page</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px 0;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #3f51b5, #1e3a8a); /* Gradient */
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .tab-button.active,
+    .tab-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Hover Effect */
+    }
+
+    .card .icon {
+      font-size: 30px;
+      margin-right: 15px;
+    }
+
+    .card .details h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .card .details p {
+      margin: 5px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .card.green {
+      border-left: 5px solid #28a745;
+    }
+
+    .card.red {
+      border-left: 5px solid #dc3545;
+    }
+
+    .card.blue {
+      border-left: 5px solid #007bff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .cards {
+        gap: 10px;
+      }
+
+      .tab-button {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .card .icon {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Savings</h1>
+    </header>
+
+    <!-- Tabs for Month/Year -->
+    <div class="tabs">
+      <button class="tab-button active" id="month-tab" aria-selected="true">Month</button>
+      <button class="tab-button" id="year-tab" aria-selected="false">Year</button>
+    </div>
+
+    <!-- Savings Cards -->
+    <div class="cards">
+      <div class="card green">
+        <div class="icon">💰</div>
+        <div class="details">
+          <h2>Total Amount Saved</h2>
+          <p id="saved-amount">Loading...</p> <!-- Default Loading Text -->
+        </div>
+      </div>
+
+      <div class="card red">
+        <div class="icon">💸</div>
+        <div class="details">
+          <h2>Spent</h2>
+          <p id="spent-amount">Loading...</p> <!-- Default Loading Text -->
+        </div>
+      </div>
+
+      <div class="card blue">
+        <div class="icon">📈</div>
+        <div class="details">
+          <h2>Remaining Savings</h2>
+          <p id="remaining-amount">Loading...</p> <!-- Default Loading Text -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get tab buttons and elements to update
+    const monthTab = document.getElementById("month-tab");
+    const yearTab = document.getElementById("year-tab");
+    const savedAmount = document.getElementById("saved-amount");
+    const spentAmount = document.getElementById("spent-amount");
+    const remainingAmount = document.getElementById("remaining-amount");
+
+    // Monthly and yearly data
+    const monthlyData = {
+      saved: "$500.00",
+      spent: "$200.00",
+      remaining: "$300.00",
+    };
+
+    const yearlyData = {
+      saved: "$6000.00",
+      spent: "$2400.00",
+      remaining: "$3600.00",
+    };
+
+    // Function to switch to monthly view
+    function showMonthly() {
+      savedAmount.textContent = monthlyData.saved;
+      spentAmount.textContent = monthlyData.spent;
+      remainingAmount.textContent = monthlyData.remaining;
+      monthTab.classList.add("active");
+      yearTab.classList.remove("active");
+      monthTab.setAttribute("aria-selected", "true");
+      yearTab.setAttribute("aria-selected", "false");
+    }
+
+    // Function to switch to yearly view
+    function showYearly() {
+      savedAmount.textContent = yearlyData.saved;
+      spentAmount.textContent = yearlyData.spent;
+      remainingAmount.textContent = yearlyData.remaining;
+      yearTab.classList.add("active");
+      monthTab.classList.remove("active");
+      yearTab.setAttribute("aria-selected", "true");
+      monthTab.setAttribute("aria-selected", "false");
+    }
+
+    // Event listeners for tabs
+    monthTab.addEventListener("click", showMonthly);
+    yearTab.addEventListener("click", showYearly);
+
+    // Default view is monthly
+    showMonthly();
+  </script>
+</body>
+</html>

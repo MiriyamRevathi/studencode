@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logos Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        /* Logo Grid */
+        .logo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .logo-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-item:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05); /* Slightly increase size when hovering */
+        }
+
+        .logo-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .logo-item span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Button Style */
+        .button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.1); /* Slightly increase button size when hovered */
+        }
+
+        .button:active {
+            transform: scale(1); /* Return to original size when clicked */
+        }
+
+        /* Back Button Style */
+        #back-button {
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">Expense Categories</div>
+
+    <!-- Logo Grid with Buttons -->
+    <div class="logo-container">
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/food.png" alt="Food">
+            <span>Food</span>
+            <button class="button" onclick="location.href='foodok.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/bus.png" alt="Transport">
+            <span>Transport</span>
+            <button class="button" onclick="location.href='travllingno.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/shopping-cart.png" alt="Shopping">
+            <span>Shopping</span>
+            <button class="button" onclick="location.href='shooping.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/student-center.png" alt="Education">
+            <span>Education</span>
+            <button class="button" onclick="location.href='ducation.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/heart-health.png" alt="Health">
+            <span>Health</span>
+            <button class="button" onclick="location.href='halth.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/movie-projector.png" alt="Entertainment">
+            <span>Entertainment</span>
+            <button class="button" onclick="location.href='ntrtainmnt.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="vooob.jpeg" alt="Sports">
+            <span>Sports</span>
+            <button class="button" onclick="location.href='sports.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/grocery-store.png" alt="Groceries">
+            <span>Groceries</span>
+            <button class="button" onclick="location.href='gocris.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/t-shirt.png" alt="Clothes">
+            <span>Clothes</span>
+            <button class="button" onclick="location.href='cloths.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="https://img.icons8.com/color/96/home.png" alt="Rent">
+            <span>Rent</span>
+           
+            <button class="button" onclick="location.href='rent.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="travvl.jpg" alt="Travelling">
+            <span>Travelling</span>
+            <button class="button" onclick="location.href='travllingno.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="bauty.jpeg" alt="Beauty">
+            <span>Beauty</span>
+            <button class="button" onclick="location.href='bauty.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="lcity.webp" alt="Electricity">
+            <span>Electricity</span>
+            <button class="button" onclick="location.href='lctricity.html'">Select</button>
+        </div>
+        <div class="logo-item">
+            <img src="insuran.png" alt="Insurance">
+            <span>Insurance</span>
+            <button class="button" onclick="location.href='insuranc.html'">Select</button>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <button id="back-button" onclick="goBack()">Back</button>
+
+    <script>
+        // Function to handle logo button click
+        function categoryClicked(categoryName) {
+            alert('You selected ' + categoryName);
+            // You can replace this with redirection to another page, if needed
+            // window.location.href = 'your-link-here.html';
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>

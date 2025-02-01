@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            position: relative;
+        }
+
+        .hamburger-menu {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        .navbar {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            position: absolute;
+            top: 55px;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar button {
+            background: none;
+            border: none;
+            color: #3f51b5;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar button i {
+            font-size: 18px;
+            color: #3f51b5;
+        }
+
+        .navbar button:hover {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        .navbar button:hover i {
+            color: white; 
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .dashboard button {
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dashboard button:hover {
+            background-color: #3545a5; 
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 160px;
+            right: 600px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            font-size: 36px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .floating-btn:hover {
+            background-color: #3545a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        Dashboard
+    </div>
+
+    <div class="navbar" id="navbar">
+        <button><i class="fas fa-home"></i> Home</button>
+        <button><i class="fas fa-user"></i> Profile</button>
+        <button><i class="fas fa-share-alt"></i> Share</button>
+        <button><i class="fas fa-bell"></i> Notifications</button>
+        <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+
+    <div class="dashboard">
+        <button id="available-balance" onclick="location.href='availabl.html'">Available Balance: </button>
+        <button onclick="location.href='sav.html'">Savings</button>
+        <button onclick="location.href='index.html'">Income</button>
+        
+    </div>
+
+    <button class="floating-btn" onclick="location.href='domain.html'">+</button>
+
+    <script>
+        // Ensure the DOM is fully loaded before executing script
+        document.addEventListener("DOMContentLoaded", function () {
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
+            }
+
+            function addExpense() {
+                alert("Add Expense button clicked!");
+            }
+
+            const availableBalance = 10000;
+            document.getElementById("available-balance").textContent = Available Balance: ₹${availableBalance};
+
+            // Assign functions to global scope
+            window.toggleMenu = toggleMenu;
+            window.addExpense = addExpense;
+        });
+    </script>
+</body>
+</html>
